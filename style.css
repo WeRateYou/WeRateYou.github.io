@@ -12,8 +12,10 @@
     font-family: 'Inconsolata', monospace;
 }
 
-body {
+html, body {
     background-color: var(--bg-color);
+    height: 100%;
+    width: 100%;
 }
 
 *:focus {
@@ -35,7 +37,7 @@ body {
 
 .filter-section {
     margin: 0px 40px 40px 40px;
-    height: 80vh;
+    height: 70vh;
     width: 250px;
 }
 
@@ -50,7 +52,7 @@ body {
 
 .filter-box {
     background-color: var(--main-color);
-    height: 63vh;
+    height: 50vh;
     width: 250px;
     margin-top: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -183,4 +185,14 @@ table tr:last-child td:first-child{
 
 table tr:last-child td:last-child{
     border-bottom-right-radius:var(--radius);
+}
+
+footer {
+    height: 10vh;
+    background-color: white;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
