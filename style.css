@@ -30,6 +30,7 @@ body {
     background-color: var(--main-color);
     color : white;
     padding: 2vh;
+    padding-left: 40px;
 }
 
 .filter-section {
