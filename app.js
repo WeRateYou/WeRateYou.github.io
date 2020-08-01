@@ -1,5 +1,3 @@
-loadTableData("AUD", true, 1);
-
 let fromSelect = document.querySelector("#from");
 let toSelect = document.querySelector("#to");
 
