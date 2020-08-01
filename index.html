@@ -14,8 +14,37 @@
     </header>   
     <div class="main">
         <div class="filter-section">
-            <div class="filter-box"></div>
 
+            <div class="description-box">
+                <h3>We get data from NZ banks and show you the exchange rates for whatever currency you want. </h3>
+            </div>
+            <div class="filter-box">
+                
+                <div class="filter-title">
+                    <h3>Control</h3>
+                </div>
+                <div class="filter-form">
+                    <form>
+                        <label for="amount">Amount in $</label>
+                        <input type="text" id="amount" name="amount" ></input><br>
+                        <label for="from">From</label>
+                        <select name="from" id="from">
+                            <option value="NZD">NZD (New Zealand Dollar)</option>
+                            <option value="AUD">AUD (Australian Dollar)</option>
+                            <option value="USD">USD (US Dollar)</option>
+                        </select>
+                        <br>
+                        <label for="to">To</label>
+                        <select name="to" id="to">
+                            <option value="NZD">NZD (New Zealand Dollar)</option>
+                            <option value="AUD">AUD (Australian Dollar)</option>
+                            <option value="USD">USD (US Dollar)</option>
+                        </select>
+                        <br>
+                        <button type="button">Go</button>
+                    </form>
+                </div>
+            </div>
         </div>
         <div class="table-section">
             <div class="table-box"></div>
