@@ -1,7 +1,7 @@
 :root{
-    --main-color:#94d8ff;
-    --bg-color: rgb(240, 239, 239);
-    --grey: rgb(230, 230, 230);
+    --main-color:#ef4a6f;
+    --bg-color: #ffbecc;
+    --accent-color: #d3f8ff;
     --radius: 6px;
 }
 
@@ -29,7 +29,7 @@ body {
 .title h1 {
     background-color: var(--main-color);
     color : white;
-    padding: 30px;
+    padding: 2vh;
 }
 
 .filter-section {
@@ -94,7 +94,10 @@ select {
     padding: 7px;
     border:none;
     border-radius: 5px;
+    cursor: pointer;
 }
+
+
 
 option{
     width: 100%;
@@ -115,7 +118,7 @@ button {
 }
 
 button:hover{
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.7);
 }
 
 .table-box {
@@ -157,7 +160,7 @@ button:hover{
 }
 
 #table-body-row:nth-child(odd) td:first-child{
-    border-right: solid var(--grey) 1px;
+    border-right: solid var(--accent-color) 1px;
 }
 
 thead{
