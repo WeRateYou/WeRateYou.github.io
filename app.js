@@ -28,7 +28,6 @@ toSelect.addEventListener("change", toChanged, false);
 
 function fromChanged() {
     let selected = fromSelect.value;
-    console.log(selected);
     if (selected === ("NZD")) {
         toSelect.remove(1);
     } else if (toSelect[1].value !== "NZD"){
