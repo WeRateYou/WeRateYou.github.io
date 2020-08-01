@@ -4,4 +4,9 @@ const currencies = {
     "dkk": "Danish Krone",
     "fjd": "Fiji Dollar",
     "hkd": "Hong Kong Dollar",
+    "inr": "Indian Rupee",
+    "lkr": "Sri Lankan Rupee",
+    "nok": "Norwegian Krone",
+    "pgk": "Papa New Guinean Kina",
+    "php": "Philippine Peso"
 };
