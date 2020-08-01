@@ -8,6 +8,7 @@
 .title h1 {
     background-color: #107BBE;
     color : white;
+<<<<<<< HEAD
     padding: 3vh;
 }
 
@@ -55,3 +56,33 @@
 .filter-form {
     color: white;
 }
+=======
+    padding: 30px;
+}
+
+.table-box table{
+    /* border: 1px solid #999;
+    border-width: medium; */
+    border-collapse: collapse;
+    margin:0;
+    padding: 1 rem;
+    position: absolute;
+    left: 350px;
+    top: 130px;
+}
+.table-box th{
+    text-align: left;
+    width: 300px;
+    font-size: 20px;
+    padding: 15px;
+    font-family:'Montserrat', sans-serif;
+    border:solid black;
+    border-width: thin;
+}
+.table-box td{
+    margin:10px;
+    padding:10px;
+    border: solid black;
+    border-width: thin;
+}
+>>>>>>> 364e07f7a94baf2a0cca1bf1dd40a4bb82138062
