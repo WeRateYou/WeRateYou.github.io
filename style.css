@@ -52,6 +52,28 @@
     padding: 10px;
 }
 
+button {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	background-color:white;
+	cursor:pointer;
+	color:black;
+	padding:9px 25px;
+    text-decoration: none;
+    border:none;
+    outline:none;
+}
+
+button:active {
+    position:relative;
+    border: none;
+    outline: none;
+}
+
+button:focus{
+    outline:none;
+}
+
+
 .table-box table{
     /* border: 1px solid #999;
     border-width: medium; */
