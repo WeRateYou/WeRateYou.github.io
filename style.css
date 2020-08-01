@@ -71,6 +71,7 @@ body {
 .filter-form {
     color: white;
     width: 100%;
+    font-size: 20px;
 }
 
 .form-element {
@@ -98,8 +99,6 @@ select {
     cursor: pointer;
 }
 
-
-
 option{
     width: 100%;
 }
@@ -109,13 +108,15 @@ button {
 	background-color:white;
 	cursor:pointer;
 	color:black;
-	padding:9px 25px;
+	padding:12px 25px;
     text-decoration: none;
     border:none;
     outline:none;
     margin: auto;
     border-radius: var(--radius);
     transition: 0.5s;
+    width: 100%;
+    margin-top: 15px;
 }
 
 button:hover{
