@@ -8,8 +8,7 @@
 .title h1 {
     background-color: #107BBE;
     color : white;
-<<<<<<< HEAD
-    padding: 3vh;
+    padding: 30px;
 }
 
 .filter-section {
@@ -56,9 +55,6 @@
 .filter-form {
     color: white;
 }
-=======
-    padding: 30px;
-}
 
 .table-box table{
     /* border: 1px solid #999;
@@ -85,4 +81,3 @@
     border: solid black;
     border-width: thin;
 }
->>>>>>> 364e07f7a94baf2a0cca1bf1dd40a4bb82138062
