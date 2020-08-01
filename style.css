@@ -15,29 +15,24 @@
     margin: 40px;
     height: 80vh;
     width: 250px;
-    border-radius: 20px;
 }
 
 .description-box {
     background-color: rgb(236, 236, 236);
     height: 10vh;
     width: 250px;
-    border-radius: 20px;
     margin-top: 20px;
-}
-
-.description-box h3 {
-    font-size: 15px;
     text-align: center;
-    padding-top: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .filter-box {
     background-color: #107BBE;
     height: 60vh;
     width: 250px;
-    border-radius: 20px;
     margin-top: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .filter-title {
@@ -45,8 +40,6 @@
     height: 8%;
     background-color: rgb(236, 236, 236);
     margin: auto;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
     text-align: center;
     color: #292929;
     padding-top: 10px;
