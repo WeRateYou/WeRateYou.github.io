@@ -13,7 +13,7 @@ fetch("https://rate-selector.herokuapp.com/api/v1/resources/rates/all").then(r =
     supportedCurrencies.sort().forEach(c => {
         const u = c.toUpperCase();
         if (currencies[u] != null) {
-            html += `<option value="${u}">${u} (${currencies[u]})</option>`
+            html += `<option value="${u}">${u} (${currencies[u].name})</option>`
         }
     });
     
@@ -46,11 +46,13 @@ function loadTableData(currency, bankIsBuying, youHave) {
     displayData.sort((a, b) => b.rate - a.rate).forEach(data => {
         const img = data.logo ? `<img class="provider-logo" src="${data.logo}"/>` : "";
         const name = `<span class="provider-name">${data.name}</span>`;
+        const u = currency.toUpperCase();
+        const symbol = currencies[u] == null ? "" : currencies[u].symbol;
         content += `
             <tr class="table-body-row">
                 <td class="name-cell">${img}${name}</td>
                 <td>${data.rate}</td>
-                <td>${data.youGet}</td>
+                <td>${symbol}${data.youGet}</td>
             </tr>
         `;
     });
