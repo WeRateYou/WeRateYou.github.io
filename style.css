@@ -37,8 +37,7 @@ html, body {
 }
 
 .filter-section {
-    margin: 0px 40px 40px 40px;
-    height: 70vh;
+    margin: 0px 40px 0 40px;
     width: 250px;
 }
 
@@ -53,13 +52,11 @@ html, body {
 
 .filter-box {
     background-color: var(--main-color);
-    height: 50vh;
     width: 250px;
     margin-top: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: var(--radius);
 }
-
 
 .filter-form {
     color: white;
@@ -127,7 +124,7 @@ button:hover{
 }
 
 thead {
-    color: white;
+    color:white;
 }
 
 .table-box table{
@@ -194,20 +191,24 @@ footer {
     margin: 0;
     width: 100%;
     padding: 3vh;
+    padding-left: 40px;
     font-size: 15px;
+    bottom: 0;
+    left: 0;
+    position:absolute;
 }
 
 @media only screen and (max-width: 580px) {
     .filter-section {
-        height: 70vh;
-        margin: 0px 5vw 0 0;
+        margin: 0px 5vw 20px 0;
         width: 90vw;
     }
 
     .main {
-        grid-template-columns: 90%;
-        margin: 40px 5vw auto 5vw;
-        grid-template-rows: auto auto;
+        display: grid;
+        grid-template-columns: auto;
+        margin: 20px 5vw auto 5vw;
+        grid-template-rows: auto 1fr;
 
     }
 
@@ -222,5 +223,10 @@ footer {
     .table-box {
         width: 90vw;
         margin-bottom: 40px;
+    }
+
+    footer {
+        position: relative;
+        padding-left: 5vw;
     }
   }
