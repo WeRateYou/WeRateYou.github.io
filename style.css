@@ -243,6 +243,9 @@ footer {
         position: relative;
         padding-left: 5vw;
     }
+    #map {
+        display: none;
+    }
   }
 
   
@@ -256,5 +259,10 @@ footer {
   @media only screen and (max-height: 702px) { 
     footer {
         position: relative;
+        
+    }
+
+    #map {
+        display: none;
     }
   }
