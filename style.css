@@ -126,6 +126,10 @@ button:hover{
     border: none;
 }
 
+thead {
+    color: white;
+}
+
 .table-box table{
     border-collapse: collapse;
     width: 100%;
