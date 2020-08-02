@@ -9,16 +9,16 @@ fetch("https://rate-selector.herokuapp.com/api/v1/resources/rates/all").then(r =
     loadTableData("AUD", false, 1);
     const supportedCurrencies = [...new Set(Object.values(json).flatMap(v => Object.keys(v.rates)))];
 
-    let html = "";
-    supportedCurrencies.forEach(c => {
+    let html = '<option value="NZD" selected="selected">NZD (New Zealand Dollar)</option>';
+    supportedCurrencies.sort().forEach(c => {
         const u = c.toUpperCase();
         if (currencies[u] != null) {
             html += `<option value="${u}">${u} (${currencies[u]})</option>`
         }
     });
     
+    fromElem.innerHTML = html;
     toElem.innerHTML = html;
-    fromElem.innerHTML = '<option value="NZD" selected="selected">NZD (New Zealand Dollar)</option>' + html;
     toElem.value = "AUD";
 });
 
