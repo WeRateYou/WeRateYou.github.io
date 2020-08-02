@@ -1,21 +1,19 @@
+
 let map;
 let service;
 let infowindow;
 
 function initMap() {
-  const auckland = new google.maps.LatLng(-36.843425, 174.757010);
+  const auckland = new google.maps.LatLng(-36.843427, 174.756992);
   infowindow = new google.maps.InfoWindow();
   map = new google.maps.Map(document.getElementById("map"), {
     center: auckland,
     zoom: 15
-    
   });
   const request = {
-    location: auckland,
-    radius: '2000',
-    query: 'currency exchange'
+    query: "currency exchange",
+    fields: ["name", "geometry"]
   };
-
   service = new google.maps.places.PlacesService(map);
   service.findPlaceFromQuery(request, (results, status) => {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
