@@ -25,3 +25,15 @@ function go(){
         document.querySelector(".filter-form").appendChild(error);
     }
 }
+
+// automatically select NZD
+let lastToValue = toElem.value;
+let lastFromValue = fromElem.value;
+toElem.addEventListener("change", () => {
+    fromElem.value = toElem.value !== "NZD" ? "NZD" : lastToValue;
+    lastToValue = toElem.value;
+});
+fromElem.addEventListener("change", () => {
+    toElem.value = fromElem.value !== "NZD" ? "NZD" : lastFromValue;
+    lastFromValue = fromElem.value;
+});
