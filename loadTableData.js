@@ -1,10 +1,26 @@
 const tbody = document.getElementById("rates-body");
+const toElem = document.getElementById("to");
+const fromElem = document.getElementById("from");
 
 let json = null;
 
 fetch("http://mattm.win:8080/api/v1/resources/rates/all").then(r => r.json()).then(json_ => {
     json = json_;
-    loadTableData("AUD", false, 100);
+    loadTableData("AUD", false, 1);
+    const supportedCurrencies = [...new Set(Object.values(json).flatMap(v => Object.keys(v.rates)))];
+    console.log(supportedCurrencies)
+
+    let html = '<option value="NZD" selected="selected">NZD (New Zealand Dollar)</option>';
+    supportedCurrencies.sort().forEach(c => {
+        const u = c.toUpperCase();
+        if (currencies[u] != null) {
+            html += `<option value="${u}">${u} (${currencies[u]})</option>`
+        }
+    });
+    
+    fromElem.innerHTML = html;
+    toElem.innerHTML = html;
+    toElem.value = "AUD";
 });
 
 function loadTableData(currency, bankIsBuying, youHave) {
