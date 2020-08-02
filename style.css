@@ -33,6 +33,7 @@ html, body {
     color : white;
     padding: 2vh;
     padding-left: 40px;
+    width: 100%;
 }
 
 .filter-section {
