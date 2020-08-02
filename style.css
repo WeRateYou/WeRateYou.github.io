@@ -196,3 +196,8 @@ footer {
     left: 0;
     width: 100%;
 }
+
+footer {
+    padding: 4vh;
+    font-size: 15px;
+}

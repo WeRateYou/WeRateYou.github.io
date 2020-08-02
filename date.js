@@ -1,10 +1,11 @@
 let button = document.querySelector("#go-button");
-console.log(button);
+let footer = document.querySelector("footer")
+displayTime();
 button.addEventListener("click", displayTime, false);
 
 function displayTime(){
-    let format = "LLLL"
-    let date = moment().format(format);
-    let timeZone = moment().format("z");
-    console.log(new Date().toString());
+    let time = new Date().toString();
+    let footerText = "Data collected at " + time;
+    document.createElement("h5");
+    footer.innerHTML = footerText;
 }
