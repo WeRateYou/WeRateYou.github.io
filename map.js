@@ -8,6 +8,7 @@ function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: sydney,
     zoom: 15
+    
   });
   const request = {
     query: "currency exchange",
