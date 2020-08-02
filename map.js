@@ -10,7 +10,7 @@ function initMap() {
     zoom: 15
   });
   const request = {
-    query: "Museum of Contemporary Art Australia",
+    query: "currency exchange",
     fields: ["name", "geometry"]
   };
   service = new google.maps.places.PlacesService(map);
