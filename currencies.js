@@ -14,4 +14,13 @@ const currencies = {
     "NOK": "Norwegian Krone",
     "PGK": "Papua New Guinea Kina",
     "PHP": "Philippine Peso",
+    "SBD": "Solomon Islands Dollar",
+    "SEK": "Swedish Krona",
+    "SGD": "Singapore Dollar",
+    "THB": "Thai Baht",
+    "TOP": "Tonga Pa'anga",
+    "VUV": "Vanuatu Vatu",
+    "WST": "Samoa Tala",
+    "XPF": "CFP Franc",
+    "ZAR": "South African Rand",
 };
