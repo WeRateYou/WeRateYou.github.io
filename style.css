@@ -126,6 +126,26 @@ button:hover{
     border: none;
 }
 
+.name-cell {
+    padding: 3px !important;
+}
+
+.name-cell span {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.provider-logo {
+    height: 1.65em;
+    vertical-align:middle;
+    margin-left: 2px;
+    margin-right: 10px;
+}
+
+thead {
+    color:white;
+}
+
 .table-box table{
     border-collapse: collapse;
     width: 100%;
@@ -148,20 +168,12 @@ button:hover{
     
 }
 
-#table-body-row:nth-child(even){
+.table-body-row:nth-child(even){
     background-color: var(--grey);
 }
 
-#table-body-row:nth-child(odd){
+.table-body-row:nth-child(odd){
     background-color: white;
-}
-
-#table-body-row:nth-child(even) td:first-child{
-    border-right: solid white 1px;
-}
-
-#table-body-row:nth-child(odd) td:first-child{
-    border-right: solid var(--accent-color) 1px;
 }
 
 thead{
@@ -170,7 +182,6 @@ thead{
 
 table th:first-child{
     border-top-left-radius:var(--radius);
-    border-right: solid white 1px;
 }
 table th:last-child{
     border-top-right-radius:var(--radius);
