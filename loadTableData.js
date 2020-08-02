@@ -38,14 +38,17 @@ function loadTableData(currency, bankIsBuying, youHave) {
             name: v.shortName,
             rate,
             youGet: youGet.toFixed(2),
+            logo: v.logo,
         }
     }).filter(x => x);
 
     let content = "";
     displayData.sort((a, b) => b.rate - a.rate).forEach(data => {
+        const img = data.logo ? `<img class="provider-logo" src="${data.logo}"/>` : "";
+        const name = `<span class="provider-name">${data.name}</span>`;
         content += `
-            <tr id="table-body-row">
-                <td>${data.name}</td>
+            <tr class="table-body-row">
+                <td class="name-cell">${img}${name}</td>
                 <td>${data.rate}</td>
                 <td>${data.youGet}</td>
             </tr>
