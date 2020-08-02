@@ -11,8 +11,9 @@ fetch("https://rate-selector.herokuapp.com/api/v1/resources/rates/all").then(r =
 
     let html = "";
     supportedCurrencies.forEach(c => {
-        if (currencies[c] != null) {
-            html += `<option value="${c.toUpperCase()}">${c.toUpperCase()} (${currencies[c]})</option>`
+        const u = c.toUpperCase();
+        if (currencies[u] != null) {
+            html += `<option value="${u}">${u} (${currencies[u]})</option>`
         }
     });
     
@@ -27,7 +28,7 @@ function loadTableData(currency, bankIsBuying, youHave) {
         if (v.rates[currency.toLowerCase()] == null) {
             return null;
         }
-        const rate = v.rates[currency.toUpperCase()][bankIsBuying ? "buy" : "sell"];
+        const rate = v.rates[currency.toLowerCase()][bankIsBuying ? "buy" : "sell"];
         if (rate == null || rate === 0) {
             return null;
         }
