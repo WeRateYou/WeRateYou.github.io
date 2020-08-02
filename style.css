@@ -1,6 +1,6 @@
 :root{
     --main-color:#ef4a6f;
-    --bg-color: #ffbecc;
+    --bg-color: #f5ffcb;
     --accent-color: #ffbecc;
     --radius: 6px;
 }
@@ -43,9 +43,10 @@ html, body {
 
 .description-box {
     background-color: white;
+    font-size: 14px;
     width: 250px;
-    text-align: center;
-    padding: 10px;
+    text-align: left;
+    padding: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: var(--radius);
 }
@@ -150,7 +151,7 @@ thead {
 }
 
 #table-body-row:nth-child(even){
-    background-color: var(--grey);
+    background-color: var(--accent-color);
 }
 
 #table-body-row:nth-child(odd){
