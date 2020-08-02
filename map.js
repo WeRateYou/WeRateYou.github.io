@@ -3,17 +3,19 @@ let service;
 let infowindow;
 
 function initMap() {
-  const sydney = new google.maps.LatLng(-33.867, 151.195);
+  const auckland = new google.maps.LatLng(-36.843425, 174.757010);
   infowindow = new google.maps.InfoWindow();
   map = new google.maps.Map(document.getElementById("map"), {
-    center: sydney,
+    center: auckland,
     zoom: 15
     
   });
   const request = {
-    query: "currency exchange",
-    fields: ["name", "geometry"]
+    location: auckland,
+    radius: '2000',
+    query: 'currency exchange'
   };
+
   service = new google.maps.places.PlacesService(map);
   service.findPlaceFromQuery(request, (results, status) => {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
