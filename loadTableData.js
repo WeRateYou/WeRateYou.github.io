@@ -4,7 +4,7 @@ let json = null;
 
 fetch("http://mattm.win:8080/api/v1/resources/rates/all").then(r => r.json()).then(json_ => {
     json = json_;
-    loadTableData("AUD", false, 100);
+    loadTableData("AUD", false, 1);
 });
 
 function loadTableData(currency, bankIsBuying, youHave) {

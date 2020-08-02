@@ -1,7 +1,7 @@
 :root{
     --main-color:#ef4a6f;
     --bg-color: #ffbecc;
-    --accent-color: #d3f8ff;
+    --accent-color: #ffbecc;
     --radius: 6px;
 }
 
@@ -74,6 +74,11 @@ html, body {
     color: white;
     width: 100%;
     font-size: 20px;
+}
+
+h4 {
+    font-size: 13px;
+    padding: 10px;
 }
 
 .form-element {
