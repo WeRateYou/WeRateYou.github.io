@@ -16,6 +16,7 @@ html, body {
     background-color: var(--bg-color);
     height: 100%;
     width: 100%;
+    overflow:auto;
 }
 
 *:focus {
@@ -189,14 +190,14 @@ table tr:last-child td:last-child{
 footer {
     height: 12vh;
     background-color: white;
-    margin: 0;
+    margin-top: 20px;
     width: 100%;
     padding: 3vh;
     padding-left: 40px;
     font-size: 15px;
     bottom: 0;
     left: 0;
-    position:absolute;
+    position: absolute;
 }
 
 footer {
@@ -244,3 +245,8 @@ footer {
     margin-bottom: 100px;
   }
   
+  @media only screen and (max-height: 702px) { 
+    footer {
+        position: relative;
+    }
+  }
