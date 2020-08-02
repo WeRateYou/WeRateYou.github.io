@@ -208,6 +208,10 @@ footer {
     position: absolute;
 }
 
+footer {
+    padding: 4vh;
+    font-size: 15px;
+}
 @media only screen and (max-width: 580px) {
     .filter-section {
         margin: 0px 5vw 20px 0;
@@ -241,6 +245,14 @@ footer {
     }
   }
 
+  
+  #map {
+    height: 70%;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 100px;
+  }
+  
   @media only screen and (max-height: 702px) { 
     footer {
         position: relative;
