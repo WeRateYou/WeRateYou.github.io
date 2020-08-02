@@ -1,6 +1,6 @@
 :root{
     --main-color:#ef4a6f;
-    --bg-color: #ffbecc;
+    --bg-color: #f5ffcb;
     --accent-color: #ffbecc;
     --radius: 6px;
 }
@@ -37,44 +37,33 @@ html, body {
 }
 
 .filter-section {
-    margin: 0px 40px 40px 40px;
-    height: 70vh;
+    margin: 0px 40px 0 40px;
     width: 250px;
 }
 
 .description-box {
     background-color: white;
+    font-size: 14px;
     width: 250px;
-    text-align: center;
-    padding: 10px;
+    text-align: left;
+    padding: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: var(--radius);
 }
 
 .filter-box {
     background-color: var(--main-color);
-    height: 50vh;
     width: 250px;
     margin-top: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: var(--radius);
 }
 
-.filter-title {
-    width: 100%;
-    height: 8%;
-    background-color: white;
-    margin: auto;
-    text-align: center;
-    color: #292929;
-    padding-top: 10px;
-    border-radius: var(--radius) var(--radius) 0 0;
-}
-
 .filter-form {
     color: white;
     width: 100%;
     font-size: 20px;
+    padding: 10px;
 }
 
 h4 {
@@ -135,6 +124,10 @@ button:hover{
     border: none;
 }
 
+thead {
+    color:white;
+}
+
 .table-box table{
     border-collapse: collapse;
     width: 100%;
@@ -158,7 +151,7 @@ button:hover{
 }
 
 #table-body-row:nth-child(even){
-    background-color: var(--grey);
+    background-color: var(--accent-color);
 }
 
 #table-body-row:nth-child(odd){
@@ -194,13 +187,16 @@ table tr:last-child td:last-child{
 }
 
 footer {
-    height: 10vh;
+    height: 12vh;
     background-color: white;
     margin: 0;
-    position: absolute;
+    width: 100%;
+    padding: 3vh;
+    padding-left: 40px;
+    font-size: 15px;
     bottom: 0;
     left: 0;
-    width: 100%;
+    position:absolute;
 }
 
 footer {
