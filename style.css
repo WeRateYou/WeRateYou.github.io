@@ -185,16 +185,38 @@ table tr:last-child td:last-child{
 }
 
 footer {
-    height: 10vh;
+    height: 12vh;
     background-color: white;
     margin: 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100%;
-}
-
-footer {
-    padding: 4vh;
+    padding: 3vh;
     font-size: 15px;
 }
+
+@media only screen and (max-width: 580px) {
+    .filter-section {
+        height: 70vh;
+        margin: 0px 5vw 0 0;
+        width: 90vw;
+    }
+
+    .main {
+        grid-template-columns: 90%;
+        margin: 40px 5vw auto 5vw;
+        grid-template-rows: auto auto;
+
+    }
+
+    .description-box {
+        width: 90vw;
+    }
+    
+    .filter-box {
+        width: 90vw;
+    }
+
+    .table-box {
+        width: 90vw;
+        margin-bottom: 40px;
+    }
+  }
