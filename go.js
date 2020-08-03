@@ -1,10 +1,9 @@
 let button = document.querySelector("#go-button");
 let footer = document.querySelector("footer")
-displayTime();
 button.addEventListener("click", go, false);
 
 function displayTime(){
-    let time = new Date().toString();
+    let time = new Date(json.updated * 1000).toString();
     let footerText = "Data valid at " + time;
     footer.innerHTML = footerText;
 }
