@@ -6,7 +6,7 @@ let infowindow;
 function initMap() {
   const auckland = new google.maps.LatLng(-36.843427, 174.756992);
   infowindow = new google.maps.InfoWindow();
-  map = new google.maps.Map(document.getElementById("map"), {
+  map = new google.maps.Map(document.querySelector(".map"), {
     center: auckland,
     zoom: 15
   });
