@@ -20,6 +20,7 @@ fetch("https://rate-selector.herokuapp.com/api/v1/resources/rates/all").then(r =
     fromElem.innerHTML = html;
     toElem.innerHTML = html;
     toElem.value = "AUD";
+    loadProviderCards();
 });
 
 function loadTableData(currency, bankIsBuying, youHave) {

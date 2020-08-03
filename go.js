@@ -37,3 +37,29 @@ fromElem.addEventListener("change", () => {
     toElem.value = fromElem.value !== "NZD" ? "NZD" : lastFromValue;
     lastFromValue = fromElem.value;
 });
+
+
+// display currrently supported providers
+function loadProviderCards(){
+    let filterSection = document.querySelector(".sources");
+
+    sources.sources.forEach(source =>{
+        sourceDiv = document.createElement("div");
+        sourceSpan = document.createElement("span");
+        sourceIMG = document.createElement("img");
+
+        sourceDiv.className = "data-source";
+        sourceSpan.className = "data-source-text";
+        sourceIMG.className = "source-img";
+
+        sourceSpan.innerHTML = source.toUpperCase();
+        sourceIMG.src = json[source].logo;
+
+        
+        sourceDiv.appendChild(sourceSpan);
+        sourceDiv.appendChild(sourceIMG);
+        
+        filterSection.appendChild(sourceDiv);
+        
+    });
+}
