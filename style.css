@@ -27,6 +27,7 @@ html, body {
     display: grid;
     grid-template-columns: 330px auto;
     margin-top: 40px;;
+    height: 75vh;
 }
 
 .title h1 {
@@ -40,6 +41,8 @@ html, body {
 .filter-section {
     margin: 0px 40px 0 40px;
     width: 250px;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
 }
 
 .description-box {
