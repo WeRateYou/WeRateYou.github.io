@@ -14,9 +14,9 @@
 
 html, body {
     background-color: var(--bg-color);
-    height: 100%;
     width: 100%;
-    overflow:auto;
+    height: 92vh;
+
 }
 
 *:focus {
@@ -25,9 +25,15 @@ html, body {
 
 .main {
     display: grid;
-    grid-template-columns: 330px auto;
-    margin-top: 40px;;
-    height: 75vh;
+    grid-template-columns: 290px auto;
+    margin: 40px;
+    height: 80vh;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 .title h1 {
@@ -39,7 +45,6 @@ html, body {
 }
 
 .filter-section {
-    margin: 0px 40px 0 40px;
     width: 250px;
     display: grid;
     grid-template-rows: auto auto auto 1fr;
@@ -150,6 +155,10 @@ button:hover{
     grid-template-columns: 85% auto;
 }
 
+#second-sources {
+    display: none;
+}
+
 .data-source-text {
     padding-left: 10px;
     font-weight: 650;
@@ -163,10 +172,8 @@ button:hover{
 }
 
 .table-box {
-    border: none;
-    margin-right: 40px;
-    height: auto;
-    margin-bottom: 40px;
+    height: 100%;
+    width: 100%;
 }
 
 .name-cell {
@@ -192,6 +199,7 @@ thead {
 
 .table-section {
     display: grid;
+    flex-wrap: wrap;
     grid-template-rows: auto 1fr;
 }
 
@@ -200,6 +208,7 @@ thead {
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: var(--radius);
+    height: auto;
 }
 
 .table-box th{
@@ -244,28 +253,26 @@ table tr:last-child td:last-child{
 }
 
 .map {
-    margin-right: 40px;
+    margin-top: 40px;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: var(--radius);
 }
 
 footer {
-    height: 12vh;
+    height: 8vh;
     background-color: white;
-    margin-top: 20px;
     width: 100%;
-    padding: 3vh;
+    padding: 20px;
     padding-left: 40px;
     font-size: 15px;
+    z-index: 1;
+    position: absolute;
     bottom: 0;
     left: 0;
-    position: absolute;
 }
 
-footer {
-    padding: 4vh;
-    font-size: 15px;
-}
-
-@media only screen and (max-width: 580px) {
+@media only screen and (max-width: 680px) {
     .filter-section {
         margin: 0px 5vw 20px 0;
         width: 90vw;
@@ -273,10 +280,10 @@ footer {
 
     .main {
         display: grid;
-        grid-template-columns: auto;
+        grid-template-columns: 100vw;
         margin: 20px 5vw auto 5vw;
-        grid-template-rows: auto 1fr;
-
+        grid-template-rows: auto 1fr auto;
+        height:auto;
     }
 
     .description-box {
@@ -292,24 +299,38 @@ footer {
         margin-bottom: 40px;
     }
 
+    .table-section{
+        grid-template-rows: auto auto;
+    }
+
+    .table-section {
+        width: 90vw;
+        grid-template-rows: auto 500px auto;
+    }
+
+    .map {
+        margin: 0;
+    }
+
+    #first-sources {
+        display: none;
+    }
+
+    #second-sources {
+        display: block;
+    }
+
     footer {
-        position: relative;
-        padding-left: 5vw;
+        position: sticky;
     }
   }
 
-  
-  #map {
-    height: 245px;
-    width: 100%;
-    margin-top: 30px;
-    margin-bottom: 100px;
-
-  }
-  
-  @media only screen and (max-height: 702px) { 
+  @media only screen and (max-height: 1000px) {
     footer {
-        position: relative;
-        
+        position: sticky;
+    }
+
+    .main {
+        height: auto;
     }
   }
