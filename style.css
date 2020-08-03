@@ -25,7 +25,7 @@ html, body {
 
 .main {
     display: grid;
-    grid-template-columns: 330px auto 40px;
+    grid-template-columns: 330px auto;
     margin-top: 40px;;
 }
 
@@ -123,6 +123,9 @@ button:hover{
 
 .table-box {
     border: none;
+    margin-right: 40px;
+    height: auto;
+    margin-bottom: 40px;
 }
 
 .name-cell {
@@ -146,6 +149,11 @@ thead {
     color:white;
 }
 
+.table-section {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
 .table-box table{
     border-collapse: collapse;
     width: 100%;
@@ -165,7 +173,6 @@ thead {
     padding:10px;
     border: none;
     border-radius: 0;
-    
 }
 
 .table-body-row:nth-child(even){
@@ -195,6 +202,10 @@ table tr:last-child td:last-child{
     border-bottom-right-radius:var(--radius);
 }
 
+.map {
+    margin-right: 40px;
+}
+
 footer {
     height: 12vh;
     background-color: white;
@@ -212,6 +223,7 @@ footer {
     padding: 4vh;
     font-size: 15px;
 }
+
 @media only screen and (max-width: 580px) {
     .filter-section {
         margin: 0px 5vw 20px 0;
@@ -243,9 +255,6 @@ footer {
         position: relative;
         padding-left: 5vw;
     }
-    #map {
-        display: none;
-    }
   }
 
   
@@ -261,9 +270,5 @@ footer {
     footer {
         position: relative;
         
-    }
-
-    #map {
-        display: none;
     }
   }
