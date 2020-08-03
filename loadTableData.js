@@ -10,6 +10,7 @@ function fetchJsonFromApi() {
     return fetch(API_URL)
         .then(r => r.json())
         .then(json_ => { json = json_; })
+        .then(() => loadProviderCards())
         .then(() => loadSupportedCurrencies());
 }
 
@@ -63,6 +64,48 @@ function loadTableData(currency, bankIsBuying, youHave) {
     tbody.innerHTML = content;
 }
 
+// display currrently supported providers
+function loadProviderCards(){
+    let filterSection = document.getElementsByClassName("sources")[0];
+    let tableSection = document.getElementsByClassName("sources")[1];
+
+    Object.entries(json.providers).forEach(([source, { logo }]) =>{
+        // Sources on side bar for web
+        sourceDiv1 = document.createElement("div");
+        sourceSpan1 = document.createElement("span");
+        sourceIMG1 = document.createElement("img");
+
+        sourceDiv1.className = "data-source";
+        sourceSpan1.className = "data-source-text";
+        sourceIMG1.className = "source-img";
+
+        sourceSpan1.innerHTML = source.toUpperCase();
+        sourceIMG1.src = logo;
+
+        // Sources under map for mobile
+        sourceDiv2 = document.createElement("div");
+        sourceSpan2 = document.createElement("span");
+        sourceIMG2 = document.createElement("img");
+
+        sourceDiv2.className = "data-source";
+        sourceSpan2.className = "data-source-text";
+        sourceIMG2.className = "source-img";
+
+        sourceSpan2.innerHTML = source.toUpperCase();
+        sourceIMG2.src = logo;
+
+        // Add elements to DOM
+        sourceDiv1.appendChild(sourceSpan1);
+        sourceDiv1.appendChild(sourceIMG1);
+
+        sourceDiv2.appendChild(sourceSpan2);
+        sourceDiv2.appendChild(sourceIMG2);
+        
+        filterSection.appendChild(sourceDiv1);
+        tableSection.appendChild(sourceDiv2);
+    });
+}
+
 // attempt to load live data, fallback to sample data
 fetchJsonFromApi()
     .then(() => {
@@ -71,6 +114,7 @@ fetchJsonFromApi()
     })
     .catch(() => {
         json = SAMPLE_DATA;
+        loadProviderCards();
         loadSupportedCurrencies();
         loadTableData("AUD", false, 120);
         toElem.value = "AUD";
