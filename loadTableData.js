@@ -77,8 +77,8 @@ function loadProviderCards(){
         // Sources on side bar for web
         tableRow = `
             <tr class="table-body-row">
-                <td>${shortName} </td>
                 <td class="source-logo-cell"><img src="${logo}" class="source-logo"></td>
+                <td><h7>${shortName}</h7></td>
             </tr>
         `;
         content += tableRow;

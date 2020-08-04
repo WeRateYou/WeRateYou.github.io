@@ -235,10 +235,8 @@ table tr:last-child td:last-child{
 .source-logo {
     height: 1.65em;
     vertical-align: middle;
-    margin: auto;
     border-radius: 50%;
-    margin: 3px;
-    margin-right: 20px;
+    margin: 5px;
 }
 
 .source-logo-cell {
@@ -249,15 +247,20 @@ table tr:last-child td:last-child{
     text-align: left;
 }
 
+.source-logo-cell {
+    padding-left: 20px;
+}
+
+.table-body-row h7 {
+    padding-left: 10px;
+}
+
 .sources-table-title-row th{
     text-align: left;
     font-weight: bolder;
     padding: 10px 10px 10px 20px;
     font-size: 17px;
-}
-
-.sources-table-body td {
-    padding-left: 20px;
+    font-weight: 800;
 }
 
 footer {
