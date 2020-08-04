@@ -4,7 +4,7 @@ button.addEventListener("click", go, false);
 
 function displayTime(){
     let time = new Date(json.updated * 1000).toString();
-    let footerText = "Data valid at " + time;
+    let footerText = `<h6 class="footer-text">Data valid at ${time}</h6>`;
     footer.innerHTML = footerText;
 }
 
