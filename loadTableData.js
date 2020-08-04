@@ -1,13 +1,24 @@
+const API_URL = "https://rate-selector.herokuapp.com/api/v1/resources/rates/all";
+
 const tbody = document.getElementById("rates-body");
 const toElem = document.getElementById("to");
 const fromElem = document.getElementById("from");
 
 let json = null;
 
-fetch("https://rate-selector.herokuapp.com/api/v1/resources/rates/all").then(r => r.json()).then(json_ => {
-    json = json_;
-    loadTableData("AUD", false, 1);
-    const supportedCurrencies = [...new Set(Object.values(json).flatMap(v => Object.keys(v.rates)))];
+function fetchJsonFromApi() {
+    return fetch(API_URL)
+        .then(r => r.json())
+        .then(json_ => {
+            json = json_;
+            loadProviderCards();
+            loadSupportedCurrencies();
+            displayTime();
+        });
+}
+
+function loadSupportedCurrencies() {
+    const supportedCurrencies = [...new Set(Object.values(json.providers).flatMap(v => Object.keys(v.rates)))];
 
     let html = '<option value="NZD" selected="selected">NZD (New Zealand Dollar)</option>';
     supportedCurrencies.sort().forEach(c => {
@@ -16,16 +27,13 @@ fetch("https://rate-selector.herokuapp.com/api/v1/resources/rates/all").then(r =
             html += `<option value="${u}">${u} (${currencies[u].name})</option>`
         }
     });
-    
+
     fromElem.innerHTML = html;
     toElem.innerHTML = html;
-    toElem.value = "AUD";
-    loadProviderCards();
-});
+}
 
 function loadTableData(currency, bankIsBuying, youHave) {
-    let id = 0;
-    const displayData = Object.entries(json).map(([k, v]) => {
+    const displayData = Object.entries(json.providers).map(([k, v]) => {
         if (v.rates[currency.toLowerCase()] == null) {
             return null;
         }
@@ -35,7 +43,6 @@ function loadTableData(currency, bankIsBuying, youHave) {
         }
         const youGet = bankIsBuying ? youHave / rate : youHave * rate;
         return {
-            id: id++,
             name: v.shortName,
             rate,
             youGet: youGet.toFixed(2),
@@ -59,3 +66,42 @@ function loadTableData(currency, bankIsBuying, youHave) {
     });
     tbody.innerHTML = content;
 }
+
+// display currrently supported providers
+function loadProviderCards(){
+    let tbodyWeb = document.getElementsByClassName("sources-table-body")[0];
+    let tbodyMobile = document.getElementsByClassName("sources-table-body")[1];
+    let content = "";
+
+    Object.values(json.providers).forEach(({ shortName, logo }) => {
+        // Sources on side bar for web
+        tableRow = `
+            <tr class="table-body-row">
+                <td>${shortName} </td>
+                <td class="source-logo-cell"><img src="${logo}" class="source-logo"></td>
+            </tr>
+        `;
+        content += tableRow;
+    });
+    tbodyWeb.innerHTML = content;
+    tbodyMobile.innerHTML = content;
+}
+
+// attempt to load live data, fallback to sample data
+fetchJsonFromApi()
+    .then(() => {
+        loadTableData("AUD", false, 120);
+        toElem.value = "AUD";
+    })
+    .catch(() => {
+        json = SAMPLE_DATA;
+        loadProviderCards();
+        loadSupportedCurrencies();
+        displayTime();
+        loadTableData("AUD", false, 120);
+        toElem.value = "AUD";
+        console.warn("Failed retrieving live data. Using demo data instead.")
+    });
+
+// reload exchange rates every half hour
+setInterval(() => fetchJsonFromApi().catch(), 30 * 60 * 1000);

@@ -1,10 +1,9 @@
 let button = document.querySelector("#go-button");
 let footer = document.querySelector("footer")
-displayTime();
 button.addEventListener("click", go, false);
 
 function displayTime(){
-    let time = new Date().toString();
+    let time = new Date(json.updated * 1000).toString();
     let footerText = `<h6 class="footer-text">Data valid at ${time}</h6>`;
     footer.innerHTML = footerText;
 }
@@ -37,24 +36,3 @@ fromElem.addEventListener("change", () => {
     toElem.value = fromElem.value !== "NZD" ? "NZD" : lastFromValue;
     lastFromValue = fromElem.value;
 });
-
-
-// display currrently supported providers
-function loadProviderCards(){
-    let tbodyWeb = document.getElementsByClassName("sources-table-body")[0];
-    let tbodyMobile = document.getElementsByClassName("sources-table-body")[1];
-    let content = "";
-
-    sources.sources.forEach(source =>{
-        // Sources on side bar for web
-        let name = source.toUpperCase();
-        let logo = json[source].logo;
-        tableRow = `<tr class="table-body-row">
-        <td>${name} </td>
-        <td class="source-logo-cell"><img src="${logo}" class="source-logo"></td>
-        </tr>`;
-        content += tableRow;
-    });
-    tbodyWeb.innerHTML = content;
-    tbodyMobile.innerHTML = content;
-}
