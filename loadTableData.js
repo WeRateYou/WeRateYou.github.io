@@ -9,9 +9,12 @@ let json = null;
 function fetchJsonFromApi() {
     return fetch(API_URL)
         .then(r => r.json())
-        .then(json_ => { json = json_; })
-        .then(() => loadProviderCards())
-        .then(() => loadSupportedCurrencies());
+        .then(json_ => {
+            json = json_;
+            loadProviderCards();
+            loadSupportedCurrencies();
+            displayTime();
+        });
 }
 
 function loadSupportedCurrencies() {
@@ -94,8 +97,10 @@ fetchJsonFromApi()
         json = SAMPLE_DATA;
         loadProviderCards();
         loadSupportedCurrencies();
+        displayTime();
         loadTableData("AUD", false, 120);
         toElem.value = "AUD";
+        console.warn("Failed retrieving live data. Using demo data instead.")
     });
 
 // reload exchange rates every half hour
