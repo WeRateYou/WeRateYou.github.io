@@ -139,8 +139,9 @@ button:hover{
     width: 100%;
 }
 
-.name-cell {
-    padding: 3px !important;
+.name-cell img {
+    margin-top: -7px;
+    margin-bottom: -4px;
 }
 
 .name-cell span {
@@ -247,7 +248,7 @@ table tr:last-child td:last-child{
     text-align: left;
 }
 
-.source-logo-cell {
+.table-box .name-cell, .source-logo-cell {
     padding-left: 20px;
 }
 
