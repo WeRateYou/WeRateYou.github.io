@@ -229,7 +229,6 @@ table tr:last-child td:last-child{
     border-radius: var(--radius);
     height: auto;
     margin-top: 20px;
-    margin-bottom: 20px;
 }
 
 .source-logo {
@@ -326,6 +325,10 @@ footer {
 
     #second-sources {
         display: block;
+    }
+
+    .sources-table {
+        margin-bottom: 20px;
     }
 
     footer {
