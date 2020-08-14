@@ -34,7 +34,6 @@ function initMap() {
     requests.requests.push(request);
     
   })
-  console.log(requests);
   service = new google.maps.places.PlacesService(map);
   requests.requests.forEach(request => {
     service.findPlaceFromQuery(request, (results, status) => {
