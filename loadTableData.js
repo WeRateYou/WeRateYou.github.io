@@ -92,6 +92,7 @@ fetchJsonFromApi()
     .then(() => {
         loadTableData("AUD", false, 120);
         toElem.value = "AUD";
+        document.querySelector('.loading-wrap').style.zIndex = -1;
     })
     .catch(() => {
         json = SAMPLE_DATA;
